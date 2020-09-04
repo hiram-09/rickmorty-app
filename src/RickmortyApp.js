@@ -14,7 +14,7 @@ export class RickmortyApp extends LitElement {
         :host {
           display: flex;
           align-items: center;
-          flex:direction: column;
+          flex-direction: column;
           background: black;
         }
         .container{
@@ -22,7 +22,7 @@ export class RickmortyApp extends LitElement {
           flex-direction: column;
           flex-flow: wrap;
           align-items: center;
-          justify-content: space-between;        
+          justify-content: space-between;
         }
          h2 {
           text-align: center;
@@ -38,16 +38,16 @@ export class RickmortyApp extends LitElement {
     }
     render() {
             return html `
-        <rickmorty-data @get-array="${(e) => this.rmArray = e.detail.data}"></rickmorty-data> 
+        <rickmorty-data @get-array="${(e) => this.rmArray = e.detail.data}"></rickmorty-data>
         <div>
           <h2>Rick & Mont APP</h2>
-        <div>
+        </div>
         <div class="container">
           ${
             this.rmArray.map((item) => html`
               <rickmorty-component
                 id="${item.id}"
-                nombre="${item.nombre}"
+                nombre="${item.name}"
                 img="${item.image}"></rickmorty-component>
             `)
           }
